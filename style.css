@@ -259,17 +259,17 @@ nav .logo h1{
     height: 3em;
     background: linear-gradient(to right, rgb(189, 4, 189) 30%, rgb(2, 103, 170));
 }
-.btn .btnWrap button:nth-child(2){
+.btn button:nth-child(2){
     width: 8.5em;
     position: relative;
     background: #000;
 }
 @property --angle{
-    system: "<angle>";
+    syntax: "<angle>";
     initial-value: 0deg;
     inherits: false;
 }
-.btn .btnWrap:nth-child(2)::before{
+.btn button:nth-child(2)::before{
     content: "";
     position: absolute;
     top: 50%;

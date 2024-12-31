@@ -455,7 +455,7 @@ nav .logoWrap h1 span{
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5em 3em;
     justify-content: center;
-    background: transparent;
+    background: none;
     min-width: max-content;
     margin-top: 1em;
     padding: 10px;

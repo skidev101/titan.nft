@@ -1,5 +1,7 @@
 :root{
     --spanColor: rgb(202, 243, 18);
+    --bgYellow: rgb(255, 145, 0, 0.8);
+    --bgPurple: rgba(90, 14, 126, 0.8);
 }
 *{
     margin: 0;
@@ -89,13 +91,13 @@ nav .logoWrap h1 span{
 }
 .ball1{
     position: absolute;
-    top: 20%;
+    top: -20%;
     right: 2%;
     width: 250px;
     height: 250px;
-    background: rgba(90, 14, 126, 0.8);
-    box-shadow: 0 0 30px rgba(90, 14, 126, 0.8);
-    animation: random1 10s infinite;
+    background: var(--bgPurple);
+    box-shadow: 0 0 30px var(--bgPurple);
+    animation: random1 8s infinite;
 }
 @keyframes random1 {
     0%{
@@ -110,20 +112,26 @@ nav .logoWrap h1 span{
 }
 .ball2{
     position: absolute;
-    top: 20%;
+    bottom: 25%;
     left: 10%;
     width: 150px;
     height: 150px;
-    background: rgba(90, 14, 126, 0.8);
-    box-shadow: 0 0 30px rgba(90, 14, 126, 0.8);
+    background: var(--bgPurple);
+    box-shadow: 0 0 30px var(--bgPurple);
     animation: random2 10s infinite;
 }
 @keyframes random2 {
     0%{
         transform: translate(0, 0);
     }
+    25%{
+        transform: translate(5%, -30%);
+    }
     50%{
-        transform: translate(10%, 10%);
+        transform: translate(10%, 20%);
+    }
+    75%{
+        transform: translate(-10%, -40%);
     }
    100%{
         transform: translate(0, 0);
@@ -135,8 +143,8 @@ nav .logoWrap h1 span{
     left: 20%;
     width: 200px;
     height: 200px;
-    background: rgb(255, 145, 0, 0.8);
-    box-shadow: 0 0 30px rgb(255, 145, 0, 0.8);
+    background: var(--bgYellow);
+    box-shadow: 0 0 30px var(--bgYellow);
     animation: random3 10s infinite;
 }
 @keyframes random3 {
@@ -144,7 +152,7 @@ nav .logoWrap h1 span{
         transform: translate(0, 0);
     }
     50%{
-        transform: translate(-40%, 20%);
+        transform: translate(-40%, -20%);
     }
    100%{
         transform: translate(0, 0);
@@ -156,16 +164,22 @@ nav .logoWrap h1 span{
     right: 40%;
     width: 100px;
     height: 100px;
-    background: rgb(255, 145, 0, 0.8);
-    box-shadow: 0 0 30px rgb(255, 145, 0, 0.8);
+    background: var(--bgYellow);
+    box-shadow: 0 0 30px var(--bgYellow);
     animation: random4 10s infinite;
 }
 @keyframes random4 {
     0%{
         transform: translate(0, 0);
     }
+    25%{
+        transform: translate(-25%, 5%);
+    }
     50%{
         transform: translate(-10%, 30%);
+    }
+    75%{
+        transform: translate(-8%, 20%);
     }
    100%{
         transform: translate(0, 0);
@@ -178,7 +192,7 @@ nav .logoWrap h1 span{
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(40px);
 }
 .cont{
     display: flex;
@@ -421,4 +435,98 @@ nav .logoWrap h1 span{
 .items .iBox p{
     font-size: .8em;
     color: var(--spanColor);
+}
+.hot{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    margin-top: 30em;
+}
+.hot h1{
+    text-align: center;
+    color: #fff;
+}
+.hot .cards{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5em 3em;
+    justify-content: center;
+    background: transparent;
+    min-width: max-content;
+    margin-top: 1em;
+    padding: 10px;
+}
+.cards .card{
+    width: auto;
+    height: auto;
+    padding: 8px 10px;
+    color: #fff;
+    background-color: rgb(3, 3, 32);
+    border-radius: 12px;
+    position: relative;
+}
+.cards .card::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    padding: 1px;
+    background: linear-gradient(to right, purple, blue);
+    border-radius: 8px;
+    filter: blur(1px);
+    opacity: .7;
+}
+.card .profile{
+    display: flex;
+    align-items: center;
+    padding: 3px 0;
+}   
+.card .profile img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+.card .profile p{
+    padding-left: 7px;
+}
+.mainInfo img{
+    width: 200px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+.mainInfo h2{
+    font-size: 1.2em;
+}
+.mainInfo .artText{
+    padding: 8px 0;
+}
+.mainInfo .artText h2{
+    font-weight: 600;
+}
+.mainInfo .artText p{
+    padding-top: 3px;
+}
+.sellInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.sellInfo button{
+    border: 1px solid red;
+    outline: none;
+    color: #fff;
+    background: none;
+    padding: 5px 8px;
+    border-radius: 50px;
 }
